@@ -1,46 +1,194 @@
-* { margin: 0; padding:0; box-sizing: border-box; }
-
-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px 50px;    
-    border-bottom: solid;
-    border-color: black;
-    align-items: center;
+* {
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
-ol {  
-    display: flex;
-    flex-wrap: wrap;    
+.navbar {
+  position: fixed;
+  background-color: transparent;
+  width: 100%;
+  padding: 30px 0;
+  top: 0;
+  z-index: 999;
+  transition: 0.3s linear;
 }
 
-li {    
-    list-style-type: none;    
-    font-weight: bold;
-    margin: 15px;
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 40px;
 }
 
-a {
-    text-decoration: none;
-    cursor: pointer;
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@media (max-width: 700px) {
-    header {
-        flex-direction: column;
-        align-items: baseline;
-        border-right: solid;
-        border-bottom: none;
-        width: 25%;
-        height: 100%;
-        padding: 0;
-        align-items: start;
-    }
+.logo {
+  background-image: url("./src/assets/img/logo.jpeg");
+  background-size: cover;
+  width: 44px;
+  height: 32px;
+  border: 5px solid black;
+  border-radius: 30px;
 }
 
-@media (max-width: 600px) {
-    ol {
-        flex-direction: column;
-    }
+.menu-toggler {
+  display: none;
+  background: none;
+  width: 30px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  z-index: 999;
+}
+
+.menu-toggler span {
+  display: block;
+  height: 3px;
+  background-color: #ffff00;
+  margin: 6px 0;
+  position: relative;
+  transition: 0.3s linear;
+}
+
+.navbar-menu a {
+  color: #ffff00;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 30px;
+  transition: 0.2s linear;
+}
+
+.navbar-menu a:hover {
+  color: #48dbfb !important;
+}
+
+#home {
+  height: 100vh;
+  min-height: 500px;
+  background: url(./src/assets/img/csgo.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#home .inner-width {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+#home .content {
+  width: 100%;
+  color: #ffff00;
+  user-select: none;
+}
+
+#home .content h1 {
+  font-size: 60px;
+  margin-bottom: 60px;
+}
+
+#home .content h1::after {
+  content: "Darkcode";
+  animation: textanim 10s linear infinite;
+}
+
+@keyframes textanim {
+  0% {
+    content: "Sir";
+  }
+  16% {
+    content: "Tatu";
+  }
+  32% {
+    content: "Pinteko";
+  }
+  64% {
+    content: "Aristoteles";
+  }
+  100% {
+    content: "Shiro Fubuki";
+  }
+}
+
+.sm a {
+  color: #ffff00;
+  font-size: 22px;
+  margin: 0 10px;
+  transition: 0.2s linear;
+}
+
+.sm a:hover {
+  color: #48dbfb;
+}
+
+#home .buttons {
+  margin-top: 60px;
+}
+
+#home .buttons a {
+  display: inline-block;
+  margin: 15px 30px;
+  color: #ff00ff;
+  font-size: 15px;
+  font-weight: 500;
+  width: 180px;
+  border: 1px solid #ff00ff;
+  padding: 14px 0;
+  border-radius: 6px;
+  transition: 0.2s linear;
+}
+
+#home .buttons a:hover,
+#home .buttons a:nth-child(2) {
+  background-color: #ff00ff;
+  color: #fff;
+}
+
+@media screen and (max-width: 980px) {
+  .menu-toggler {
+    display: block;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: #353b48;
+    top: 0;
+    right: -100%;
+    max-width: 400px;
+    padding: 80px 50px;
+    transition: 0.3s linear;
+  }
+
+  .navbar-menu a {
+    display: block;
+    font-size: 30px;
+    margin: 30px 0;
+  }
+
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  .menu-toggler.active span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 4px;
+  }
+
+  .menu-toggler.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggler.active span:nth-child(3) {
+    transform: rotate(45deg);
+    bottom: 14px;
+  }
 }

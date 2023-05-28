@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="src/assets/fontawesome-free-6.4.0-web/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="src/assets/modules/fontawesome-free-6.4.0-web/css/all.min.css"
+    />
     <title>Document</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <ol>
-                <li>
-                    <i class="fa-solid fa-bars fa-lg"></i>         
-                    <i class="fa-regular fa-bars fa-lg"></i>
-                </li>            
-                <li> Sobre Nós </li>
-                <li> Jogadores </li>
-                <li> Partidas </li>
-                <li> Fale Conosco </li>
-            </ol>
-        </nav>  
-        <nav>
-            <ol>
-                <li>
-                    Jogue Conosco
-                </li>            
-                <li> Perfil </li>            
-                <li> Sair </li>
-            </ol>
-        </nav>
-    </header>
-</body>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <a href="./index.html" class="logo"></a>
+        <button class="menu-toggler" onclick="togglerClicked(this)">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div id="navbar-menu-id" class="navbar-menu">
+          <a href="#">Início</a>
+          <a href="#">Sobre Nós</a>
+          <a href="#">Jogadores</a>
+          <a href="#">Partidas</a>
+          <a href="#">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Home -->
+    <section id="home">
+      <div class="inner-width">
+        <div class="content">
+          <h1>A POAR é </h1>          
+        </div>
+      </div>
+    </section>
 </html>
+
+<script type="text/javascript">
+  function togglerClicked(event) {    
+    event.classList.toggle('active');
+
+    document.getElementById('navbar-menu-id').classList.toggle('active');
+  }
+</script>
